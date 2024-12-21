@@ -1,16 +1,12 @@
-import Image from "next/image";
 import SearchForm from "../../components/SearchForm";
 import StartupCard, { StartupTypeCard } from "@/components/StartupCard";
-import { client } from "@/sanity/lib/client";
 import { STARTUP_QUIRY } from "@/sanity/lib/quiries";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
-import { auth } from "@/auth";
 
 export default async function Home({searchParams}:{searchParams:Promise<{query?:string}>}) {
   const query = (await searchParams).query
   const params = { search: query || null }
   const {data:posts} = await sanityFetch({query:STARTUP_QUIRY,params:params})
-  const session = await auth()
   
   return (
     <>

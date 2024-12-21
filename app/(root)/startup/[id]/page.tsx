@@ -1,13 +1,12 @@
 import { formateDate } from '@/lib/utils';
 import { client } from '@/sanity/lib/client'
-import { PLAYLIST_BY_SLUG_QUIRY, STARTUP_BY_ID_QUERY } from '@/sanity/lib/quiries';
+import {  STARTUP_BY_ID_QUERY } from '@/sanity/lib/quiries';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { Suspense } from 'react'
 import markdownit from 'markdown-it'
 import { Skeleton } from '@/components/ui/skeleton';
 import View from '@/components/View';
-import StartupCard, { StartupTypeCard } from '@/components/StartupCard';
 export const experimental_ppr = true;
 const page = async ( {params}:{params:Promise<{id:string}>}) => {
     const id = (await params).id
