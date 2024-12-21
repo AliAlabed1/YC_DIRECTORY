@@ -15,7 +15,8 @@ export const STARTUP_QUIRY = defineQuery(`
         image,
         description,
         slug,
-        views
+        views,
+        _createdAt
     }     
 `)
 
