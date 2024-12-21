@@ -34,7 +34,7 @@ const StratupForm = () => {
                     title:'Sucess',
                     description:"Your startup pitch has been created successfuly",
                 })
-                router.push(`/stratup/${result._id}`)
+                router.push(`/`)
                 return result;
             }
         } catch (error) {
